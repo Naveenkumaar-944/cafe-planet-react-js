@@ -8,41 +8,101 @@ function Header() {
     <header className="CoffeeHeader">
       <nav className="CoffeeNav">
 
+        {/* Brand */}
+
         <div className="CoffeeBrand">
-          <img src={source} className="CoffeeLogo" alt="logo" />
+          <img src={source} className="CoffeeLogo" alt="Cafe Logo" />
           <h2 className="NavH2">Cafe Planet</h2>
         </div>
 
-        {/* Hamburger */}
+        {/* Mobile Menu Icon */}
 
         <div
           className="MenuIcon"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          ☰
+          {menuOpen ? "✕" : "☰"}
         </div>
+
+        {/* Navbar */}
 
         <ul className={menuOpen ? "CoffeeUl active" : "CoffeeUl"}>
 
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li>
+            <a href="#hero" onClick={() => setMenuOpen(false)}>
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="#AboutSection" onClick={() => setMenuOpen(false)}>
+              About
+            </a>
+          </li>
+
+          {/* Products Dropdown */}
 
           <li className="CoffeeDroper">
             <a href="#products">Products</a>
 
             <ul className="CoffeeDropNav">
-              <li><a href="#hot-coffee">Hot Coffee</a></li>
-              <li><a href="#cold-coffee">Cold Coffee</a></li>
-              <li><a href="#signature-drinks">Signature Drinks</a></li>
-              <li><a href="#tea">Tea</a></li>
-              <li><a href="#bakery-items">Bakery Items</a></li>
-              <li><a href="#snacks">Snacks</a></li>
+
+              <li>
+                <a href="#hot-coffee" onClick={() => setMenuOpen(false)}>
+                  Hot Coffee
+                </a>
+              </li>
+
+              <li>
+                <a href="#cold-coffee" onClick={() => setMenuOpen(false)}>
+                  Cold Coffee
+                </a>
+              </li>
+
+              <li>
+                <a href="#SignatureDrinks" onClick={() => setMenuOpen(false)}>
+                  Signature Drinks
+                </a>
+              </li>
+
+              <li>
+                <a href="#Tea" onClick={() => setMenuOpen(false)}>
+                  Tea
+                </a>
+              </li>
+
+              <li>
+                <a href="#BakeryItems" onClick={() => setMenuOpen(false)}>
+                  Bakery Items
+                </a>
+              </li>
+
+              <li>
+                <a href="#Snacks" onClick={() => setMenuOpen(false)}>
+                  Snacks
+                </a>
+              </li>
+
             </ul>
           </li>
 
-          <li><a href="#blogs">Blogs</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="#blogs" onClick={() => setMenuOpen(false)}>
+              Blogs
+            </a>
+          </li>
+
+          <li>
+            <a href="#gallery" onClick={() => setMenuOpen(false)}>
+              Gallery
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </a>
+          </li>
 
         </ul>
 

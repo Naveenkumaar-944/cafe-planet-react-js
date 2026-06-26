@@ -1017,13 +1017,123 @@ img{
 
 
 
-/* HAMBURGER HIDDEN DESKTOP */
+/* ================= HEADER ================= */
+
+.CoffeeHeader{
+  width:100%;
+  background:#D5BBA6;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.CoffeeNav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 30px;
+  position:relative;
+}
+
+
+/* ================= BRAND ================= */
+
+.CoffeeBrand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.CoffeeLogo{
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.NavH2{
+  color:#4A2C2A;
+  font-size:2rem;
+}
+
+
+/* ================= NAV LINKS ================= */
+
+.CoffeeUl{
+  display:flex;
+  align-items:center;
+  list-style:none;
+  gap:12px;
+}
+
+.CoffeeUl li{
+  list-style:none;
+}
+
+.CoffeeNav a{
+  text-decoration:none;
+  padding:8px 14px;
+  background:#C78C55;
+  color:#A42C2A;
+  border-radius:5px;
+  font-weight:bold;
+  transition:0.3s ease;
+}
+
+.CoffeeNav a:hover{
+  color:white;
+  box-shadow:0 4px 8px rgba(0,0,0,0.20);
+}
+
+
+/* ================= DROPDOWN ================= */
+
+.CoffeeDroper{
+  position:relative;
+}
+
+.CoffeeDropNav{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+
+  min-width:180px;
+  background:#5D4037;
+  border-radius:8px;
+  padding:10px;
+  z-index:100;
+}
+
+.CoffeeDropNav li{
+  margin-bottom:10px;
+}
+
+.CoffeeDropNav a{
+  display:block;
+  background:none;
+  color:#C78C55;
+  font-size:14px;
+}
+
+.CoffeeDroper:hover .CoffeeDropNav{
+  display:block;
+}
+
+
+/* ================= MENU ICON ================= */
 
 .MenuIcon{
   display:none;
   font-size:2rem;
   cursor:pointer;
   color:#4A2C2A;
+  font-weight:bold;
+  transition:0.3s ease;
+}
+
+.MenuIcon:hover{
+  transform:scale(1.1);
 }
 
 
@@ -1033,20 +1143,34 @@ img{
 
   .CoffeeNav{
     padding:15px 20px;
-    position:relative;
   }
+
+  .CoffeeLogo{
+    width:50px;
+    height:50px;
+  }
+
+  .NavH2{
+    font-size:1.5rem;
+  }
+
+  /* Move icon right side */
 
   .MenuIcon{
     display:block;
+    position:absolute;
+    right:20px;
+    top:18px;
+    z-index:1200;
   }
 
-  /* Hide menu initially */
+  /* Hide desktop menu */
 
   .CoffeeUl{
     display:none;
   }
 
-  /* Show when clicked */
+  /* Show mobile menu */
 
   .CoffeeUl.active{
     display:flex;
@@ -1057,15 +1181,18 @@ img{
     left:0;
 
     width:100%;
-    padding:20px 0;
-
     background:#D5BBA6;
-    text-align:center;
-    gap:20px;
+
+    padding:20px 0;
+    gap:15px;
+
+    z-index:999;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
   }
 
   .CoffeeUl li{
     width:100%;
+    text-align:center;
   }
 
   .CoffeeNav a{
@@ -1073,12 +1200,98 @@ img{
     width:180px;
   }
 
-  /* Disable desktop dropdown */
+  /* Mobile dropdown */
 
   .CoffeeDropNav{
+    display:block;
     position:static;
+    background:none;
+    padding:10px 0;
     box-shadow:none;
-    margin-top:10px;
   }
 
+  .CoffeeDropNav a{
+    background:#E7D5C5;
+    color:#4A2C2A;
+    margin:5px auto;
+    width:160px;
+  }
 }
+
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+.ProductContainer{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  padding:30px;
+}
+
+.ProductCard{
+  width:100%;
+  height:320px;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.ProductCard img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+@media(max-width:992px){
+  .ProductContainer{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+  .ProductContainer{
+    grid-template-columns:1fr;
+    padding:15px;
+  }
+}
+
+.CoffeeHero{
+  background-image:url("./assets/Bg.png");
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+  min-height:100vh;
+}
+
+@media(max-width:768px){
+  .CoffeeHero{
+    min-height:70vh;
+    padding:40px 20px;
+  }
+
+  .HeroContent{
+    width:100%;
+    padding:20px;
+    text-align:center;
+  }
+
+  .HeroContent h1{
+    font-size:2rem;
+  }
+}
+
+.GalleryContainer{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.GalleryContainer img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
