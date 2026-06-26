@@ -14,7 +14,7 @@ function Contact() {
 
           <p>📍 21 Coffee Street, Chennai, India</p>
 
-          <p>📞 +91 98765 43210</p>
+          <p>📞 +91 1234567890</p>
 
           <p>✉ cafeplanet@gmail.com</p>
 
