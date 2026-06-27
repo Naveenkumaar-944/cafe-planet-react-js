@@ -48,13 +48,13 @@ function Header() {
             <ul className="CoffeeDropNav">
 
               <li>
-                <a href="#hot-coffee" onClick={() => setMenuOpen(false)}>
+                <a href="#HotCoffee" onClick={() => setMenuOpen(false)}>
                   Hot Coffee
                 </a>
               </li>
 
               <li>
-                <a href="#cold-coffee" onClick={() => setMenuOpen(false)}>
+                <a href="#ColdCoffee" onClick={() => setMenuOpen(false)}>
                   Cold Coffee
                 </a>
               </li>
